@@ -14,8 +14,19 @@ add u0 (
     .cout (cout)
 );
 
+integer i, j;
+
 initial begin
-    // Insira o seu teste aqui
+    $display("num 1 num 2 | cout out | esperado");
+    for(i=0; i<16; i=i+1) begin
+        for (j=0; j<16; j=j+1) begin
+            num1 = i;
+            num2 = j;
+            #1;
+            $display("%4b %4b | %b   %4b   | %5b", num1, num2, cout, out, num1 + num2);
+        end
+    end
+    $finish;
 end
 
 endmodule
